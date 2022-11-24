@@ -11,7 +11,7 @@ namespace WordSearcher
         {
             _characterBoard = characterBoard;
         }
-        public bool Exist(string searchWord)
+        public bool WordExist(string searchWord)
         {
             if (searchWord == "")
                 return false;
