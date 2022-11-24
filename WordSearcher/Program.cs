@@ -55,9 +55,7 @@ namespace WordSearcher
             {
                 COL
             };
-            ISearcher searcher2 = new Searcher(myList);
-
-
+            
 
 
             var assembly = Assembly.GetExecutingAssembly();
@@ -74,17 +72,18 @@ namespace WordSearcher
 
             }
 
-            var t = strContent;
-            foreach(var s in strContent)
+            ISearcher searcher2 = new Searcher(myList);
+            foreach (var word in strContent)
             {
-                var  result=searcher2.Exist(s.ToUpper());
+                var  result=searcher2.Exist(word.ToUpper());
                 if (result)
                 {
-                    Console.WriteLine($"Word FOUND {s}");
+                    Console.WriteLine($"Word FOUND: {word}");
                     
                 }
             }
             Console.ReadLine();
+            //todo Highlight the found text
         }
 
 
