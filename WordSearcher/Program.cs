@@ -13,7 +13,7 @@ namespace WordSearcher
 
         static void Main(string[] args)
         {
-            var wordText = string.Empty;
+            
             var strContent=new List<string>();
             var testGrid = new List<List<char>>{
         new List<char>{'A', 'B', 'C', 'E','G'},
@@ -25,9 +25,9 @@ namespace WordSearcher
 
 
             ISearcher searcher = new Searcher(testGrid);//for test
-            var result1 = searcher.Exist("ABCCED"); // true  
-            var result2 = searcher.Exist("SEE"); // true  
-            var result3 = searcher.Exist("ABCB"); // false 
+            var result1 = searcher.WordExist("ABCCED"); // true  
+            var result2 = searcher.WordExist("SEE"); // true  
+            var result3 = searcher.WordExist("ABCB"); // false 
 
             char[,] array = new char[5, 5];
             List<char> Row = new List<char>();
@@ -72,10 +72,10 @@ namespace WordSearcher
 
             }
 
-            ISearcher searcher2 = new Searcher(myList);
+            ISearcher search = new Searcher(myList);
             foreach (var word in strContent)
             {
-                var  result=searcher2.Exist(word.ToUpper());
+                var  result=search.WordExist(word.ToUpper());
                 if (result)
                 {
                     Console.WriteLine($"Word FOUND: {word}");

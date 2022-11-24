@@ -6,7 +6,7 @@ namespace WordSearcher
 {
     public interface ISearcher
     {
-        bool Exist(string searchWord);
+        bool WordExist(string searchWord);
         void PrintSearchedWord();
 
     }
